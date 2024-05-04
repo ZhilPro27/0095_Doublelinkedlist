@@ -78,4 +78,9 @@ void deleteNode() {
 	cout << "\nEnter the roll number of the student whose record is to be deleted: ";
 	cin >> rollNo;	// step 3: get the roll number to be deleted
 
+	if (START = NULL) {
+		cout << "List is empty" << endl;
+		return;
+	}
+
 }
