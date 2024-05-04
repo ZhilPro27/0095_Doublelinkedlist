@@ -52,7 +52,7 @@ void addNode() {
 		}
 
 		if (previous != NULL) {
-			current->next = newNode; // step 7: Make the next field of the previous node point to the new node
+			previous->next = newNode; // step 7: Make the next field of the previous node point to the new node
 		}
 		else {
 			// If previous is still NULL, it means newNode is now the first node
@@ -61,7 +61,7 @@ void addNode() {
 	}
 }
 
-bool search(int rollNo, Node **previous, Node **current) {
+bool search(int rollNo, Node** previous, Node** current) {
 	*previous = NULL;
 	*current = START;
 	while (*current != NULL && (*current)->noMhs != rollNo) {
@@ -78,7 +78,7 @@ void deleteNode() {
 	cout << "\nEnter the roll number of the student whose record is to be deleted: ";
 	cin >> rollNo;	// step 3: get the roll number to be deleted
 
-	if (START = NULL) {
+	if (START == NULL) {
 		cout << "List is empty" << endl;
 		return;
 	}
@@ -99,7 +99,7 @@ void deleteNode() {
 
 	// Node to be deleted is the first node
 	if (current == START) {
-		START == START->next; // step 2: update the STARRT pointer
+		START = START->next; // step 2: update the STARRT pointer
 		if (START != NULL) {
 			START->prev = NULL;
 		}
@@ -119,7 +119,7 @@ void deleteNode() {
 }
 
 bool listEmpty() {
-	return (START = NULL);
+	return (START == NULL);
 }
 
 void traverse() {
@@ -127,7 +127,7 @@ void traverse() {
 		cout << "\nList is empty" << endl;
 	else {
 		cout << "\nRecords in ascending order of roll number are :" << endl;
-		Node *currentNode = START; // step 1
+		Node* currentNode = START; // step 1
 		while (currentNode != NULL) { // step 2 
 			cout << currentNode->noMhs << " " << currentNode->name << endl; // step 3
 			currentNode = currentNode->next;
@@ -190,10 +190,10 @@ int main() {
 				addNode();
 				break;
 			case '2':
-				deleteNode;
+				deleteNode();
 				break;
 			case '3':
-				traverse;
+				traverse();
 				break;
 			case'4':
 				retraverse();
@@ -208,7 +208,7 @@ int main() {
 				break;
 			}
 		}
-		catch (exception& e) {
+		catch (exception &e) {
 			cout << "Check for the values entered" << endl;
 		}
 	}
