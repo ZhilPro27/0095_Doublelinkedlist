@@ -60,3 +60,7 @@ void addNode() {
 		}
 	}
 }
+
+bool search() {
+
+}
