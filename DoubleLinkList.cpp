@@ -62,5 +62,11 @@ void addNode() {
 }
 
 bool search() {
-
+	*previous = NULL;
+	*current = START;
+	while (*current != NULL && (*current)->noMhs != rollNo) {
+		*previous = *current;
+		*current = (*current)->next;
+	}
+	return (*current != NULL);
 }
